@@ -7,4 +7,4 @@ let money,
 
 alert ('Learn JavaScript!');
 
-console.log('I am glad to be here');
+console.log('I do not like git');
