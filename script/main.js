@@ -1,9 +1,9 @@
-let money,
-  income,
-  addExpenses,
-  deposit,
-  mission,
-  period;
+let money;
+let income;
+let addExpenses;
+let deposit;
+let mission;
+let period;
 
 alert ('Learn JavaScript!');
 
