@@ -7,4 +7,4 @@ let mission,
 
 alert ('Learn JavaScript !');
 
-console.log('I am glad to be here and to learn git or no ');
+console.log('I am glad to be here');
