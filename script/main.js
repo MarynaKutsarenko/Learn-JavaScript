@@ -1,10 +1,24 @@
-let money;
-let income;
-let addExpenses;
-let deposit;
-let mission,
-    period;
+let num = (Array.from('266219'));
 
-alert ('Learn JavaScript !');
+let result = num.reduce(function (total, item) {
 
-console.log('I am glad to be here');
+  return (total * item);
+
+}, 1);
+
+result **= 3;
+
+
+
+/*
+let result2 = result.slice(0, 2);
+
+console.log(result);
+console.log(result2);
+
+let sw = [1, 2, 4, 5];
+
+let sw2 = sw.slice(0, 2);
+
+console.log(sw2);
+*/
