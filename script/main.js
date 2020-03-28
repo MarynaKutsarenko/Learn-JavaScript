@@ -9,12 +9,8 @@ let mult = arr.reduce(function (total, item) {
 
 power = mult ** 3;
 
-function mat(power) {
-  let cut = (power.toString().substring(0, 2))
-  console.log(cut)
-};
+cut = (power.toString().substring(0, 2));
 
-mat(power);
-
+console.log(cut)
 console.log(mult);
 console.log(power);
