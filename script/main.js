@@ -1,24 +1,20 @@
-let num = (Array.from('266219'));
 
-let result = num.reduce(function (total, item) {
+let num = 266219,
+    arr = num.toString().split(''),
+    power ;
 
+let mult = arr.reduce(function (total, item) {
   return (total * item);
-
 }, 1);
 
-result **= 3;
+power = mult ** 3;
 
+function mat(power) {
+  let cut = (power.toString().substring(0, 2))
+  console.log(cut)
+};
 
+mat(power);
 
-/*
-let result2 = result.slice(0, 2);
-
-console.log(result);
-console.log(result2);
-
-let sw = [1, 2, 4, 5];
-
-let sw2 = sw.slice(0, 2);
-
-console.log(sw2);
-*/
+console.log(mult);
+console.log(power);
