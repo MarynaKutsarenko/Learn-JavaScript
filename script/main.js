@@ -1,7 +1,8 @@
 
 let num = 266219,
     arr = num.toString().split(''),
-    power ;
+    power ,
+    cut ;
 
 let mult = arr.reduce(function (total, item) {
   return (total * item);
@@ -11,6 +12,6 @@ power = mult ** 3;
 
 cut = (power.toString().substring(0, 2));
 
-console.log(cut)
+console.log(cut);
 console.log(mult);
 console.log(power);
