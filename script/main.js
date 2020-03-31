@@ -10,7 +10,6 @@ let money = +prompt('Введите Ваш месячный доход!', '10000
     target ,
     budgetDay ;
 
-
 function getQuestions() {
   let expenses = prompt('Введите обязательную статью расходов! :', 'квартплата продукты проезд'),
       amount = +prompt('Во сколько обойдется?', '3000')
