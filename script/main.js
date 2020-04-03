@@ -11,27 +11,29 @@ let money ,
     period = 7,
     target ,
     budgetDay ,
-    amount = 0,
+    amount ,
     expenses = [];
 
 let start = function(){
   do {
-    money = prompt('Введите Ваш месячный доход!');
+    money = prompt('Введите Ваш месячный доход!', '12000');
   }
   while (!isNumber(money));
 }
 start();
-
+let sum = 0;
 let getExpensesMonth = function (){
-  let sum = 0;
+
   for (let i = 0; i < 2; i++) {
+
      expenses[i] = prompt('Введите обязательную статью расходов!');
      do {
-      sum += +prompt('Во сколько обойдется?');
+      sum = +prompt('Во сколько обойдется?');
      }
     while(!isNumber(sum));
+    amount = sum;
   }
-  return  sum;
+  return  amount + sum;
 }
 getExpensesMonth ();
 // вычисление месячного бюджета
