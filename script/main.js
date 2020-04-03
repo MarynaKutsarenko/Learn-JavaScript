@@ -10,19 +10,11 @@
 // }
 // test(10);
 
-let n=5;
-let m = [];
-// while (n < 6) {
-//   console.log(n);
-//   n++;
-// }
+function corner(time, minute) {
+  return 30 * time - ( 11 * minute / 2 );
+}
+console.log(Math.abs(corner(3, 30)));
 
-// do {
-//   m += +prompt('вопрос');
-//   ++n;
-// } while (n < 10) {
-//   console.log(m);
-// };
 
 // for (let i = 0; i < 5; ++i){
 //   if (i === 2) {
