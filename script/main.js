@@ -23,15 +23,15 @@ let start = function(){
 start();
 
 let getExpensesMonth = function (){
-
+  let sum = 0;
   for (let i = 0; i < 2; i++) {
      expenses[i] = prompt('Введите обязательную статью расходов!');
      do {
-      amount += +prompt('Во сколько обойдется?');
+      sum += +prompt('Во сколько обойдется?');
      }
-    while(!isNumber(amount));
+    while(!isNumber(sum));
   }
-  return  amount;
+  return  sum;
 }
 getExpensesMonth ();
 // вычисление месячного бюджета
