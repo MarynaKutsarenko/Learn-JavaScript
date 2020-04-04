@@ -11,7 +11,7 @@ let money ,
     period = 7,
     target ,
     budgetDay ,
-    amount ,
+    amount = 0,
     expenses = [];
 
 let start = function(){
@@ -31,9 +31,9 @@ let getExpensesMonth = function (){
       sum = +prompt('Во сколько обойдется?');
      }
     while(!isNumber(sum));
-    amount = sum;
+    amount = amount+ sum;
   }
-  return  amount + sum;
+  return  amount ;
 }
 getExpensesMonth ();
 // вычисление месячного бюджета
