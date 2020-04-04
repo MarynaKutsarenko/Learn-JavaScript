@@ -1,10 +1,2 @@
-let money;
-let income;
-let addExpenses;
-let deposit;
-let mission,
-    period;
+'use strict'
 
-alert ('Learn JavaScript !');
-
-console.log('I am glad to be here');
