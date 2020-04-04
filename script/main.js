@@ -42,15 +42,3 @@ function letPlay() {
 letPlay();
 
 alert(' Поздровляю вы угадали, Вам понадобилось: ' + numberOfGuesses + ' попыток');
-
-
-// function recursia(number) {
-//   number--;
-//   console.log(number);
-
-//   if (number > 0) {
-//     recursia(number);
-//   }
-
-// }
-// recursia(10);
