@@ -11,34 +11,36 @@ let name = prompt('Привет, как тебя зовут?', 'Mary');
 
 alert(name + ', Я загадала число от 1 до 100. Попробуй отгадать его ;) ');
 
-let numberOfGuesses = 0;
+const letPlay = function() {
 
-function letPlay() {
   let number = Math.ceil(Math.random() * 100);
   console.log(number);
-
+  let numberOfGuesses = 0;
   let guess = prompt(' Какое число я загадала?');
-      if (guess == null)
-        return ;
 
   function letGuess() {
-    while (!isNumber(guess)){
-      guess = prompt('Введите число')
-    }
 
-    if (number > guess ) {
-      guess = prompt('Загаданное число больше, попробуйте еще раз');
-      numberOfGuesses = numberOfGuesses + 1;
-      letGuess();
-    }
-    if (number < guess ) {
-      guess = prompt('Загаданное число меньше, попробуйте еще раз');
-      numberOfGuesses = numberOfGuesses + 1;
-      letGuess();
+    if (isNumber(guess)){
+      guess = +guess;
+      if (number > guess ) {
+        guess = prompt('Загаданное число больше, попробуйте еще раз');
+        numberOfGuesses = numberOfGuesses + 1;
+        letGuess();
+      }  else if (number < guess ) {
+        guess = prompt('Загаданное число меньше, попробуйте еще раз');
+        numberOfGuesses = numberOfGuesses + 1;
+        letGuess();
+      } else {
+        alert(' Поздровляю вы угадали, Вам понадобилось: ' + numberOfGuesses + ' попыток');
+      }
+    } else if (guess === null) {
+      alert(' Спасибо за игру. Досвидание!');
+    } else {
+      guess = prompt('Введите число!');
     }
   }
   return letGuess();
 }
-letPlay();
 
-alert(' Поздровляю вы угадали, Вам понадобилось: ' + numberOfGuesses + ' попыток');
+const startGame = letPlay();
+
