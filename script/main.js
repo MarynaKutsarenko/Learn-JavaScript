@@ -37,10 +37,11 @@ const letPlay = function() {
       alert(' Спасибо за игру. Досвидание!');
     } else {
       guess = prompt('Введите число!');
+      letGuess();
     }
   }
   return letGuess();
 }
-
-const startGame = letPlay();
+const getGame = letPlay();
+getGame()
 
