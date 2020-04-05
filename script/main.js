@@ -18,7 +18,7 @@ const letPlay = function() {
   let numberOfGuesses = 0;
   let guess = prompt(' Какое число я загадала?');
 
-  function letGuess() {
+  return function letGuess() {
 
     if (isNumber(guess)){
       guess = +guess;
@@ -40,7 +40,6 @@ const letPlay = function() {
       letGuess();
     }
   }
-  return letGuess();
 }
 const getGame = letPlay();
 getGame()
