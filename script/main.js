@@ -53,26 +53,23 @@ let appData = {
             appData.expenses[amound]= cost;
           }
     },
-    getExpensesMonth: function (){
-      let sum = 0;
-        for (let key in appData.expenses) {
-          
-          sum 
-          appData.expenses =  sum;
-        }
+    getBudget: function (){
+      for (let key in appData.expenses) {
+        return appData.getBudget += +appData.expenses;
+      }
     },
     getAccumulatedMonth: function () {
       return appData.budget - appData.expenses;
     },
     getTargetMonth: function(){
-      return appData.mission / accumulatedMonth;
+      return appData.mission / appData.getAccumulatedMonth;
     },
     getStatusIncome: function () {
-      if ( budgetDay >= 1200 ){
+      if ( appData.getBudget >= 1200 ){
         return ('У вас высокий уровень дохода');
-      } else if ( budgetDay >= 600 && budgetDay < 1200){
+      } else if ( appData.getBudget >= 600 && appData.getBudget  < 1200){
         return ('У вас средний уровень дохода');
-      }else if ( budgetDay < 600 && budgetDay >= 0){
+      }else if ( appData.getBudget < 600 && appData.getBudget >= 0){
         return ('К сожалению у вас уровень дохода ниже среднего');
       } else {
         return ('Произошла ошибка');
@@ -80,22 +77,16 @@ let appData = {
     },
 };
 appData.asking();
-appData.getExpensesMonth ();
-
-
-let accumulatedMonth = appData.getAccumulatedMonth();
-
-let target = appData.getTargetMonth();
-
-let budgetDay = accumulatedMonth / 30 ;
-
-console.log('Расходы за месяц: ', appData.expenses);
-console.log('Бюджет на день:', Math.floor(budgetDay));
-
+appData.getBudget ();
+appData.getAccumulatedMonth();
+appData.getTargetMonth();
 appData.getStatusIncome();
 
-if (target< 0) {
+console.log('Расходы за месяц: ', appData.expenses);
+console.log('Ваш уровень дохода: ', appData.getStatusIncome);
+
+if (appData.getTargetMonth < 0) {
   console.log('Вы не достигните цели');
 } else {
-  console.log('Период достижения цели: ', Math.ceil(target) + ' месяцев');
+  console.log('Период достижения цели: ', Math.ceil(appData.getTargetMonth) + ' месяцев');
 }
