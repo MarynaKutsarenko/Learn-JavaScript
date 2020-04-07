@@ -20,7 +20,52 @@
 // let date = {year: 2020, month: 'Aprial', day: 06};
 // console.log(date.year + '-' + date.month + '-' + date.day);
 
+// getExpensesMonth: function (){
+//   let sum = 0;
+//     for (let i = 0; i < 2; i++) {
+  
+//       appData.addExpenses[i] = prompt('Введите обязательную статью расходов!', 'тренажерка , квартплатаб тнет ');
+//       do {
+//         sum += +prompt('Во сколько обойдется?', '234');
+//       }
+//       while(!isNumber(sum));
+//       appData.expenses =  sum;
+//     }
+//   return appData.expenses ;
+// }
+let isNumber = function(n){
+  return !isNaN(parseFloat(n) && isFinite(n));
+}
 
+function promptNumber(massege, errorMassege) {
+  let text = '',
+      number = 0;
+    while (number <= 0){
+      text = prompt(massege, '');
+
+      if (isNumber(text)) {
+        number = parseInt(text);
+      }
+      massege = errorMassege;
+    }
+    return number;
+}
+
+let addExpenses= [];
+let expenses = [];
+function getQuestions() {
+    addExpenses = prompt('Введите обязательную статью расходов!', 'тренажерка , квартплатаб инет ');
+    expenses = promptNumber('Во сколько обойдется?', 'Ввелите число!');
+    return{
+      addExpenses: addExpenses,
+      expenses: expenses
+    };
+}
+
+let result1 = getQuestions();
+let result2 = getQuestions();
+console.log(addExpenses);
+console.log(expenses);
 
 
 
@@ -64,7 +109,6 @@
 
 // one(two);
 
-
 // function two() {
 //   console.log('отобразить');
 // }
@@ -74,9 +118,3 @@
 // function res(w, e) {
 //   const sum = w * e;
 //   return sum;
-// }
-
-// console.log(res(3, 4));
-// console.log(res(6, 4));
-// console.log(res(7, 8));
-// console.log(res(8, 4));
