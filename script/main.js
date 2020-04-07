@@ -20,16 +20,7 @@
 // let date = {year: 2020, month: 'Aprial', day: 06};
 // console.log(date.year + '-' + date.month + '-' + date.day);
 
-// let arr = [ 'Mary',  'Kutsarenko'];
-// arr.push('Vladimirowna');
-// console.log(arr);
-// console.log(arr.splice(2,1, 'girl', 'good'));
-// console.log(arr);
-// console.log(arr.push('student'),arr, arr.join( ));
-// console.log(arr.sort());
-// console.log(arr.slice(-1));
-// console.log(arr.push('kutsarenko'));
-// console.log(arr);
+
 
 
 
