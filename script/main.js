@@ -49,8 +49,8 @@ let appData = {
           appData.expenses =  sum;
         }
         return  {
-          appData.addExpenses[0]: appData.expenses ,
-          appData.addExpenses[1]: appData.expenses
+          addExpenses: appData.expenses ,
+          addExpenses: appData.expenses
         };
     },
     getAccumulatedMonth: function () {
