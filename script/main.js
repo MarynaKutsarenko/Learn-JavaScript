@@ -4,6 +4,20 @@ let isNumber = function(n){
   return !isNaN(parseFloat(n) && isFinite(n));
 }
 
+function promptNumber(massege, errorMassege) {
+  let text = '',
+      number = 0;
+    while (number <= 0){
+      text = prompt(massege, '');
+
+      if (isNumber(text)) {
+        number = parseInt(text);
+      }
+      massege = errorMassege;
+    }
+    return number;
+} 
+
 let money ;
 
 let start = function(){
@@ -30,14 +44,14 @@ let appData = {
       let sum = 0;
         for (let i = 0; i < 2; i++) {
       
-          appData.addExpenses[i] = prompt('Введите обязательную статью расходов!', 'тренажерка , квартплатаб тнет ');
-          do {
-            sum += +prompt('Во сколько обойдется?', '234');
-          }
-          while(!isNumber(sum));
+          appData.addExpenses[i] = prompt('Введите обязательную статью расходов!');
+          sum += promptNumber('Во сколько обойдется?', 'Ввелите число!');
           appData.expenses =  sum;
         }
-      return  appData.expenses ;
+        return  {
+          appData.addExpenses[0]: appData.expenses ,
+          appData.addExpenses[1]: appData.expenses
+        };
     },
     getAccumulatedMonth: function () {
       return appData.budget - appData.expenses;
@@ -63,7 +77,8 @@ let appData = {
     }
 };
 appData.asking();
-appData.getExpensesMonth ();
+let result1 = appData.getExpensesMonth ();
+console.log(result1);
 
 let accumulatedMonth = appData.getAccumulatedMonth();
 
