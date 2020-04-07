@@ -33,39 +33,49 @@
 //     }
 //   return appData.expenses ;
 // }
-let isNumber = function(n){
-  return !isNaN(parseFloat(n) && isFinite(n));
+// let isNumber = function(n){
+//   return !isNaN(parseFloat(n) && isFinite(n));
+// }
+
+// function promptNumber(massege, errorMassege) {
+//   let text = '',
+//       number = 0;
+//     while (number <= 0){
+//       text = prompt(massege, '');
+
+//       if (isNumber(text)) {
+//         number = parseInt(text);
+//       }
+//       massege = errorMassege;
+//     }
+//     return number;
+// }
+
+let addExpenses= {a: 12, b: 13};
+for (let key in addExpenses) {
+  let a= addExpenses[key];
+  let sum = a + addExpenses[key];
+  console.log(sum);
 }
 
-function promptNumber(massege, errorMassege) {
-  let text = '',
-      number = 0;
-    while (number <= 0){
-      text = prompt(massege, '');
 
-      if (isNumber(text)) {
-        number = parseInt(text);
-      }
-      massege = errorMassege;
-    }
-    return number;
-}
 
-let addExpenses= [];
-let expenses = [];
-function getQuestions() {
-    addExpenses = prompt('Введите обязательную статью расходов!', 'тренажерка , квартплатаб инет ');
-    expenses = promptNumber('Во сколько обойдется?', 'Ввелите число!');
-    return{
-      addExpenses: addExpenses,
-      expenses: expenses
-    };
-}
 
-let result1 = getQuestions();
-let result2 = getQuestions();
-console.log(addExpenses);
-console.log(expenses);
+
+// let expenses = [];
+// function getQuestions() {
+//     addExpenses = prompt('Введите обязательную статью расходов!', 'тренажерка , квартплатаб инет ');
+//     expenses = promptNumber('Во сколько обойдется?', 'Ввелите число!');
+//     return{
+//       addExpenses: addExpenses,
+//       expenses: expenses
+//     };
+// }
+
+// let result1 = getQuestions();
+// let result2 = getQuestions();
+// console.log(addExpenses);
+// console.log(expenses);
 
 
 
