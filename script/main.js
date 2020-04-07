@@ -40,18 +40,26 @@ let appData = {
     budgetDay: 0,
     budgetMonth: 0,
     expensesMonth: 0,
+    asking: function() {
+      let addExpenses = prompt('Перечислите дополнительные расходы: ', 'курсы , проезд');
+          appData.addExpenses = addExpenses.toLowerCase().split(' ');
+          appData.deposit = confirm('Есть ли у Вас депозит?');
+
+          for (let i = 0; i < 2; i++) {
+      
+            let amound = prompt('Введите обязательную статью расходов!');
+            let cost = promptNumber('Во сколько обойдется?', 'Ввелите число!');
+
+            appData.expenses[amound]= cost;
+          }
+    },
     getExpensesMonth: function (){
       let sum = 0;
-        for (let i = 0; i < 2; i++) {
-      
-          appData.addExpenses[i] = prompt('Введите обязательную статью расходов!');
-          sum += promptNumber('Во сколько обойдется?', 'Ввелите число!');
+        for (let key in appData.expenses) {
+          
+          sum 
           appData.expenses =  sum;
         }
-        return  {
-          addExpenses: appData.expenses ,
-          addExpenses: appData.expenses
-        };
     },
     getAccumulatedMonth: function () {
       return appData.budget - appData.expenses;
@@ -70,15 +78,10 @@ let appData = {
         return ('Произошла ошибка');
       }
     },
-    asking: function() {
-      let addExpenses = prompt('Перечислите дополнительные расходы: ', 'курсы , проезд');
-          appData.addExpenses = addExpenses.toLowerCase().split(' ');
-          appData.deposit = confirm('Есть ли у Вас депозит?');
-    }
 };
 appData.asking();
-let result1 = appData.getExpensesMonth ();
-console.log(result1);
+appData.getExpensesMonth ();
+
 
 let accumulatedMonth = appData.getAccumulatedMonth();
 
