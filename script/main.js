@@ -51,13 +51,22 @@
 //     return number;
 // }
 
-let addExpenses= {a: 12, b: 13};
-for (let key in addExpenses) {
-  let a= addExpenses[key];
-  let sum = a + addExpenses[key];
-  console.log(sum);
-}
 
+
+
+
+let arr = [2,4,1,5,3,6];
+let result = 0; 
+function isSmaller(item) {
+  if ((arr.length - 1) <= item){
+    return true;
+  }
+  result++;
+  return false;
+}
+let result2 = arr.filter(isSmaller);
+console.log(result2);
+console.log(result);
 
 
 
