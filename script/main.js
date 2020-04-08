@@ -87,7 +87,7 @@ appData.getExpensesMonth();
 appData.getBudget ();
 appData.getTargetMonth();
 appData.getStatusIncome();
-
+appData.outlog();
 console.log('Расходы за месяц: ', appData.expensesMonth);
 console.log('Ваш уровень дохода: ', appData.getStatusIncome());
 
