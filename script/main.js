@@ -29,7 +29,7 @@ let start = function(){
 start();
 
 let appData = {
-    budget: money,
+    budget: +money,
     income: {},       //доп доходы сумма
     addIncome: [],      // перечисляем доп доходы
     expenses: {},       //доп расзоды
@@ -54,39 +54,45 @@ let appData = {
           }
     },
     getBudget: function (){
+      appData.budgetMonth = appData.budget - appData.expensesMonth;
+      appData.budgetDay = appData.budgetMonth / 30 ;
+    },
+    getExpensesMonth: function(){
       for (let key in appData.expenses) {
-        return appData.getBudget += +appData.expenses;
+        appData.expensesMonth += +appData.expenses[key];
       }
     },
-    getAccumulatedMonth: function () {
-      return appData.budget - appData.expenses;
-    },
     getTargetMonth: function(){
-      return appData.mission / appData.getAccumulatedMonth;
+      appData.period = appData.mission / appData.budgetMonth;
     },
     getStatusIncome: function () {
-      if ( appData.getBudget >= 1200 ){
+      if ( appData.budgetDay >= 1200 ){
         return ('У вас высокий уровень дохода');
-      } else if ( appData.getBudget >= 600 && appData.getBudget  < 1200){
+      } else if ( appData.budgetDay >= 600 && appData.budgetDay  < 1200){
         return ('У вас средний уровень дохода');
-      }else if ( appData.getBudget < 600 && appData.getBudget >= 0){
+      }else if ( appData.budgetDay < 600 && appData.budgetDay >= 0){
         return ('К сожалению у вас уровень дохода ниже среднего');
       } else {
         return ('Произошла ошибка');
       }
     },
+    outlog: function(){
+      for (const key in appData) {
+        console.log('Ключ: ' + key + ' значение: ' + appData[key]);
+      }
+    },
 };
 appData.asking();
+appData.getExpensesMonth();
 appData.getBudget ();
-appData.getAccumulatedMonth();
 appData.getTargetMonth();
 appData.getStatusIncome();
 
-console.log('Расходы за месяц: ', appData.expenses);
-console.log('Ваш уровень дохода: ', appData.getStatusIncome);
+console.log('Расходы за месяц: ', appData.expensesMonth);
+console.log('Ваш уровень дохода: ', appData.getStatusIncome());
 
 if (appData.getTargetMonth < 0) {
   console.log('Вы не достигните цели');
 } else {
-  console.log('Период достижения цели: ', Math.ceil(appData.getTargetMonth) + ' месяцев');
+  console.log('Период достижения цели: ', Math.ceil(appData.period) + ' месяцев');
 }
