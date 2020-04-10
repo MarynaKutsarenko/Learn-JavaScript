@@ -50,23 +50,48 @@
 //     }
 //     return number;
 // }
+let checkString = function(line){
+  return isNaN(parseFloat(line)) && line !== '';
+};
+let addExpenses = prompt('Введите обязательную статью расходов!');
+do {
+  addExpenses = prompt('ошибка! Введите обязательную статью расходов!');
+} while (!checkString(addExpenses));
 
 
 
+// function promptString(massege, errorMassege) {
+//   let text= prompt( massege, '');
+//     while ( text === ' '  || text === null || (text.trim() == '')){
+//       text = prompt( errorMassege, '')  ;
+//       }
+//     addExpenses = text;
+// } 
 
 
-let arr = [2,4,1,5,3,6];
-let result = 0; 
-function isSmaller(item) {
-  if ((arr.length - 1) <= item){
-    return true;
-  }
-  result++;
-  return false;
-}
-let result2 = arr.filter(isSmaller);
-console.log(result2);
-console.log(result);
+// let addExpenses;
+// let isText = function(n){
+//    do {
+//      addExpenses = prompt('Введите обязательную статью расходов!', 'ошибка! ');
+//    }
+//    while()
+//  }
+//  isText();
+
+
+
+// let arr = [2,4,1,5,3,6];
+// let result = 0; 
+// function isSmaller(item) {
+//   if ((arr.length - 1) <= item){
+//     return true;
+//   }
+//   result++;
+//   return false;
+// }
+// let result2 = arr.filter(isSmaller);
+// console.log(result2);
+// console.log(result);
 
 
 
