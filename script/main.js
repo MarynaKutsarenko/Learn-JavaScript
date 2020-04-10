@@ -17,6 +17,9 @@ function promptNumber(massege, errorMassege) {
     }
     return number;
 } 
+let checkString = function(line){
+  return isNaN(parseFloat(line)) && line !== '';
+};
 
 let money = promptNumber('Введите Ваш месячный доход!', 'Ошибка! Введите число!'); 
 
@@ -37,20 +40,31 @@ let appData = {
     asking: function() {
 
       if (confirm('Есть ли у Вас дополнительный источник заробатка?')){
-        let itemIncome = prompt('Какой у Вас дополнительный зароботок? ', ' фриланс');
+        let itemIncome = prompt('Какой у Вас дополнительный зароботок? ');
+              while (!checkString(itemIncome)){
+                itemIncome = prompt('ошибка! Введите дополнительный источник заробатка!');
+              }
+
         let cashIncome = promptNumber('Сколько денег вы на этом зарабатываете? ', 'Ошибка! Введите число!');
         appData.income[itemIncome] = cashIncome;
       }
 
-      let addExpenses = prompt('Перечислите дополнительные расходы: ', 'курсы , проезд');
-          appData.addExpenses = addExpenses.toLowerCase().split(' ');
+      let addExpenses = prompt('Перечислите дополнительные расходы: ');
+            while (!checkString(addExpenses)){
+              addExpenses = prompt('ошибка! Введите дополнительные расходы!');
+            }
+
+          appData.addExpenses = addExpenses.split(' ').map(word => word[0].toUpperCase(addExpenses) + word.substring(1)).join(' ');
           appData.deposit = confirm('Есть ли у Вас депозит?');
 
           for (let i = 0; i < 2; i++) {
       
             let amound = prompt('Введите обязательную статью расходов!');
-            let cost = promptNumber('Во сколько обойдется?', 'Ошибка! Введите число!');
+                  while (!checkString(addExpenses)){
+                    addExpenses = prompt('ошибка! Введите статью расходов!');
+                  }
 
+            let cost = promptNumber('Во сколько обойдется?', 'Ошибка! Введите число!');
             appData.expenses[amound]= cost;
           }
     },
@@ -100,6 +114,7 @@ appData.getStatusIncome();
 appData.outlog();
 console.log('Расходы за месяц: ', appData.expensesMonth);
 console.log('Ваш уровень дохода: ', appData.getStatusIncome());
+console.log('Ваши возможные расходы: ', appData.addExpenses);
 
 if (appData.getTargetMonth < 0) {
   console.log('Вы не достигните цели');
