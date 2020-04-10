@@ -50,13 +50,13 @@
 //     }
 //     return number;
 // }
-let checkString = function(line){
-  return isNaN(parseFloat(line)) && line !== '';
-};
-let addExpenses = prompt('Введите обязательную статью расходов!');
-do {
-  addExpenses = prompt('ошибка! Введите обязательную статью расходов!');
-} while (!checkString(addExpenses));
+// let checkString = function(line){
+//   return isNaN(parseFloat(line)) && line !== '';
+// };
+// let addExpenses = prompt('Введите обязательную статью расходов!');
+// do {
+//   addExpenses = prompt('ошибка! Введите обязательную статью расходов!');
+// } while (!checkString(addExpenses));
 
 
 
@@ -149,16 +149,10 @@ do {
 //     callback();
 //   }, 2000);
 // }
-
-
 // one(two);
-
 // function two() {
 //   console.log('отобразить');
 // }
 
-// //детерминированная функция зависит от данных
 
-// function res(w, e) {
-//   const sum = w * e;
-//   return sum;
+

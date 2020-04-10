@@ -1,3 +1,12 @@
 body {
   background: yellowgreen;
 }
+h1{
+  color: red;
+  margin: 0 auto;
+}
+
+#parent input{
+  color: red;
+  text-align: center;
+}
