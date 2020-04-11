@@ -155,4 +155,32 @@
 // }
 
 
+let inputButton3 = document.querySelector('#button3');
+let inputButton1 = document.querySelector('#button1');
+let inputButton2 = document.querySelector('#button2');
 
+let paragrap1 = document.querySelector('#element1');
+let paragrap2 = document.querySelector('#element2');
+let paragrap3 = document.querySelector('#element3');
+let paragrap5 = document.querySelector('#element5');
+
+inputButton3.addEventListener('click', function () {
+  let a = '!'+ paragrap1.innerHTML  ;
+  paragrap1.innerHTML = a;
+  paragrap1.innerHTML = '<b> текст </b>';
+});
+
+inputButton1.addEventListener('click', function(){
+  let mult = (Number(paragrap2.innerHTML)**3);
+  paragrap2.innerHTML = mult;
+})
+
+inputButton2.addEventListener('click', function(){
+  let sum = (Number(paragrap5.innerHTML) + 1);
+  paragrap5.innerHTML = sum;
+})
+
+inputButton2.addEventListener('click', function(){
+  paragrap3.innerHTML;
+  paragrap3.innerHTML = '<b>hello</b>';
+})
