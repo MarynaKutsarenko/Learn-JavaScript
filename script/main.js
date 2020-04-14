@@ -20,64 +20,6 @@
 // let date = {year: 2020, month: 'Aprial', day: 06};
 // console.log(date.year + '-' + date.month + '-' + date.day);
 
-// getExpensesMonth: function (){
-//   let sum = 0;
-//     for (let i = 0; i < 2; i++) {
-  
-//       appData.addExpenses[i] = prompt('Введите обязательную статью расходов!', 'тренажерка , квартплатаб тнет ');
-//       do {
-//         sum += +prompt('Во сколько обойдется?', '234');
-//       }
-//       while(!isNumber(sum));
-//       appData.expenses =  sum;
-//     }
-//   return appData.expenses ;
-// }
-// let isNumber = function(n){
-//   return !isNaN(parseFloat(n) && isFinite(n));
-// }
-
-// function promptNumber(massege, errorMassege) {
-//   let text = '',
-//       number = 0;
-//     while (number <= 0){
-//       text = prompt(massege, '');
-
-//       if (isNumber(text)) {
-//         number = parseInt(text);
-//       }
-//       massege = errorMassege;
-//     }
-//     return number;
-// }
-// let checkString = function(line){
-//   return isNaN(parseFloat(line)) && line !== '';
-// };
-// let addExpenses = prompt('Введите обязательную статью расходов!');
-// do {
-//   addExpenses = prompt('ошибка! Введите обязательную статью расходов!');
-// } while (!checkString(addExpenses));
-
-
-
-// function promptString(massege, errorMassege) {
-//   let text= prompt( massege, '');
-//     while ( text === ' '  || text === null || (text.trim() == '')){
-//       text = prompt( errorMassege, '')  ;
-//       }
-//     addExpenses = text;
-// } 
-
-
-// let addExpenses;
-// let isText = function(n){
-//    do {
-//      addExpenses = prompt('Введите обязательную статью расходов!', 'ошибка! ');
-//    }
-//    while()
-//  }
-//  isText();
-
 
 
 // let arr = [2,4,1,5,3,6];
@@ -92,26 +34,6 @@
 // let result2 = arr.filter(isSmaller);
 // console.log(result2);
 // console.log(result);
-
-
-
-
-// let expenses = [];
-// function getQuestions() {
-//     addExpenses = prompt('Введите обязательную статью расходов!', 'тренажерка , квартплатаб инет ');
-//     expenses = promptNumber('Во сколько обойдется?', 'Ввелите число!');
-//     return{
-//       addExpenses: addExpenses,
-//       expenses: expenses
-//     };
-// }
-
-// let result1 = getQuestions();
-// let result2 = getQuestions();
-// console.log(addExpenses);
-// console.log(expenses);
-
-
 
 // function test(data) {
 
@@ -137,50 +59,100 @@
 //   console.log(i);
 // }
 
-
-
-
-// function one(callback) {
-//   console.log('сделать запрос');
-//   setTimeout(function(){
-//     console.log('получить данные');
-//   }, 1000);
-//   setTimeout(function(){
-//     callback();
-//   }, 2000);
-// }
-// one(two);
-// function two() {
-//   console.log('отобразить');
-// }
-
-
-let inputButton3 = document.querySelector('#button3');
-let inputButton1 = document.querySelector('#button1');
-let inputButton2 = document.querySelector('#button2');
+let link = document.querySelector('.link ');
+let input = document.querySelector('input');
+let elem = document.querySelector('#elem');
+let image = document.querySelector('img');
+let inputOne = document.querySelector('#input');
+let inputTwo = document.querySelector('#input2');
+let inputTree = document.querySelector('#input3');
+let inputFore = document.querySelector('#input4');
+let inputFiwe = document.querySelector('#input4');
+let div = document.querySelector('#qw');
+let button = document.querySelector('#button');
+let elem2 = document.querySelector('#elem2');
+let p = document.querySelectorAll('.wwww');
+let parrent = document.querySelector('#parrent');
 
 let paragrap1 = document.querySelector('#element1');
 let paragrap2 = document.querySelector('#element2');
 let paragrap3 = document.querySelector('#element3');
 let paragrap5 = document.querySelector('#element5');
+let wer = document.querySelectorAll('div');
+let newInput = document.querySelector('#newInput');
+let value = newInput.getAttribute('value');
 
-inputButton3.addEventListener('click', function () {
-  let a = '!'+ paragrap1.innerHTML  ;
-  paragrap1.innerHTML = a;
-  paragrap1.innerHTML = '<b> текст </b>';
-});
+image.width = 300;
 
-inputButton1.addEventListener('click', function(){
-  let mult = (Number(paragrap2.innerHTML)**3);
-  paragrap2.innerHTML = mult;
-})
+// for (const item of wer) {
+//   item.addEventListener('click', function funck(){
+//     this.classList.toggle('colored');
+//   })
+//   this.removeEventListener('click', funck);
+// }
 
-inputButton2.addEventListener('click', function(){
-  let sum = (Number(paragrap5.innerHTML) + 1);
-  paragrap5.innerHTML = sum;
-})
+// inputOne.getAttribute('value');
+// console.log(inputOne.value);
+// elem.setAttribute('value', '!!!');
+// button.setAttribute('class', 'valid');
+// button.removeAttribute('class' , 'valid');
+// console.log(button.hasAttribute('value'));
 
-inputButton2.addEventListener('click', function(){
-  paragrap3.innerHTML;
-  paragrap3.innerHTML = '<b>hello</b>';
-})
+// for (let item of p){
+//   item.addEventListener('click', funck);
+// }
+// function funck() {
+//   this.textContent = this.textContent + '!';
+//   this.removeEventListener('click', funck);
+// }
+
+// for (let item of p){
+//   item.addEventListener('click', function qqq(){
+//     console.log(this.textContent);
+//     this.removeEventListener('click', qqq);
+//   })
+// }
+
+// elem.addEventListener('click', sum);
+
+// function sum() {
+//   for (let i = 1; i < 10 ; i++){
+//     this.value = Number(this.value)+ 1;
+//   }
+//   this.removeEventListener('click', sum);
+// }
+
+// link.addEventListener('click', test3);
+
+// function test3() {
+//   this.textContent = this.textContent + '(' + link.href + ')';
+//   this.removeEventListener('click', test3);
+// }
+
+// inputOne.addEventListener('blur', test);
+// inputTwo.addEventListener('blur', test);
+// inputTree.addEventListener('blur', test);
+// inputFore.addEventListener('blur', test);
+
+// function test() {
+//   this.value = Number(this.value);
+//   this.removeEventListener('blur', test);
+// }
+
+
+// button.addEventListener('click', function(){
+//   paragrap1.textContent = Number(inputOne.value) + Number(inputTwo.value) + Number(inputTree.value);
+// })
+
+
+// for (let item of p){
+//   item.addEventListener('click', function () {
+//     console.log(this.textContent);
+//   })
+// }
+
+// for (let div of wer){
+//   div.addEventListener('click', function(){
+//     this.textContent++;
+//   })
+// }
