@@ -159,6 +159,11 @@ document.addEventListener('DOMContentLoaded', function(){
   buttonCalculate.addEventListener('click', appData.start);
   buttonIncomeExpPlus.addEventListener('click', appData.addExpensesBlock);
 
+
+
+
+
+  
   // if (appData.getTargetMonth < 0) {
   //   console.log('Вы не достигните цели');
   // } else {
