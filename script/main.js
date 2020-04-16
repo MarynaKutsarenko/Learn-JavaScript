@@ -84,6 +84,11 @@ let value = newInput.getAttribute('value');
 
 image.width = 300;
 
+button.addEventListener('click', funck);
+function funck() {
+  paragrap2.textContent = Number(inputTwo.value) +Number(inputTree.value);
+}
+
 // for (const item of wer) {
 //   item.addEventListener('click', function funck(){
 //     this.classList.toggle('colored');
