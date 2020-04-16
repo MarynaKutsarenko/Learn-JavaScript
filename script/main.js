@@ -89,6 +89,18 @@ function funck() {
   paragrap2.textContent = Number(inputTwo.value) +Number(inputTree.value);
 }
 
+elem.addEventListener('click', function(){
+  paragrap2.style.display = 'none';
+})
+
+elem2.addEventListener('click', function(){
+  paragrap1.hidden = true;
+})
+
+button.addEventListener('click', function(){
+  this.hidden = true;
+})
+
 // for (const item of wer) {
 //   item.addEventListener('click', function funck(){
 //     this.classList.toggle('colored');
