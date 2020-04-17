@@ -179,14 +179,19 @@ document.addEventListener('DOMContentLoaded', function(){
       changeRangeValue: function(){
         periodAmount.textContent = inputRange.value ;
       },
+      checkButtonCalculate: function(){
+        if (inputSalaryAmount.value === '' || !isNumber(inputSalaryAmount.value)) {
+          inputSalaryAmount.focus();
+          buttonCalculate.setAttribute('disabled', 'disabled');
+        } else {
+          buttonCalculate.removeAttribute('disabled', 'disabled');
+        }
+      },
 
   };
-  buttonCalculate.addEventListener('click', function(){
-    if (inputSalaryAmount.value === '') {
-      inputSalaryAmount.focus();
-      buttonCalculate.disabled = true;
-    }
-  });
+  buttonCalculate.setAttribute('disabled', 'disabled');
+  
+  inputSalaryAmount.addEventListener('change', appData.checkButtonCalculate);
   buttonCalculate.addEventListener('click', appData.start);
   buttonIncomeExpPlus.addEventListener('click', appData.addExpensesBlock);
   buttonAddExpPlus.addEventListener('click', appData.addIncomeBlock);
