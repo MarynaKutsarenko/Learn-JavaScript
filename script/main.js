@@ -181,15 +181,16 @@ document.addEventListener('DOMContentLoaded', function(){
       },
       closeButtonStart: function(){
 
-        if (inputSalaryAmount.value === '') {
-          buttonCalculate.setAttribute('disabled', 'disabled');
+        if (!inputSalaryAmount.value ) {
+          inputSalaryAmount.focus();
+          buttonCalculate.disabled = true;
           
         } else {
-          buttonCalculate.removeAttribute('disabled');
+          buttonCalculate.disabled = false;
         }
       },
   };
-  buttonCalculate.addEventListener('input', appData.closeButtonStart);
+  buttonCalculate.addEventListener('click', appData.closeButtonStart);
   buttonCalculate.addEventListener('click', appData.start);
   buttonIncomeExpPlus.addEventListener('click', appData.addExpensesBlock);
   buttonAddExpPlus.addEventListener('click', appData.addIncomeBlock);
