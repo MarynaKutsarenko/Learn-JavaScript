@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function(){
       inputBudgetDay = document.querySelector('.budget_day-value'),
       inputExpensesMonth = document.querySelector('.expenses_month-value'),
       inputAdditionalIncome = document.querySelector('.additional_income-value'),
-      inputAdditionalExpenses = document.querySelector('.additional_expenses-value'),
+      AdditionalExpensesValue = document.querySelector('.additional_expenses-value'),
       inputIncomePeriod = document.querySelector('.income_period-value')[0],
       inputTargetMonth = document.querySelector('.target_month-value')[0],
       inputRange = document.querySelector('.period-select'),
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function(){
       inputDepositPercent = document.querySelector('.deposit-percent'),
       inputDepositAmount = document.querySelector('.deposit-amount'),
       selectDepositBank = document.querySelector('.deposit-bank'),
-      inputEdditionalExpenses = document.querySelector('.additional_expenses-item'),
+      inputAdditionalExpenses = document.querySelector('.additional_expenses-item'),
       buttonExpensesAdd = document.querySelector('.expenses_add'),
       expensesItems = document.querySelectorAll('.expenses-items'),
       inputExpensesTitle = document.querySelector('.expenses-title'),
@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', function(){
   let appData = {
       budget: 0,
       income: {},       //доп доходы сумма
-      addIncome: [], 
-      incomeMonth: 0,     // перечисляем доп доходы
+      addIncome: [],  // перечисляем доп доходы
+      incomeMonth: 0,    
       expenses: {},       //доп расходы
       addExpenses: [],    // возможные расходы
       deposit: false,
@@ -72,8 +72,8 @@ document.addEventListener('DOMContentLoaded', function(){
         inputBudgetMonth.value = appData.budgetMonth;
         inputBudgetDay.value = Math.floor(appData.budgetDay);
         inputExpensesMonth.value = appData.expensesMonth;
-        inputAdditionalExpenses.value = appData.addExpences.join(',');
-        inputAdditionalIncome.value = appData.addIncome.join(',');
+        inputAdditionalExpenses.value = appData.addExpenses.join(',');
+        inputAdditionalIncome.value = appData.addIncome.join(', ');
         inputTargetMonth.value = Math.ceil(appData.getTargetMonth());
         inputIncomePeriod.value = appData.calcSavedMoney();
 
@@ -128,7 +128,8 @@ document.addEventListener('DOMContentLoaded', function(){
         }
       },
       getAddExpenses: function(){
-        let addExpenses = inputEdditionalExpenses.value.split(',');
+        let addExpenses = inputAdditionalExpenses.value.split(', ');
+        console.log(appData.addExpenses.join(','));
             addExpenses.forEach(function(item){
              item = item.trim();
               if (item !== '') {
