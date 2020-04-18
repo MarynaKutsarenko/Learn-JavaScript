@@ -199,17 +199,23 @@ document.addEventListener('DOMContentLoaded', function(){
           for (let item of inputsData){
             if (resetButton) {
               item.setAttribute('disabled', 'disabled');
-            } else {
+            } else  {
               item.removeAttribute('disabled');
             }
           }
         },
         blockReset: function(){
+
           appData.blockInputs();
           buttonCalculate.style.display = 'block';
           cancel.style.display = 'none';
           inputRange.value = 0;
           periodAmount.value = 0;
+
+          inputsData = document.querySelector('.data').querySelectorAll('input[type=text]');
+          for (let item of inputsData){
+              item.removeAttribute('disabled');
+            }
 
           for (let  i = incomeItems.length - 1; i > 0; i--) {
             incomeItems = document.querySelectorAll('.income-items');
@@ -243,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function(){
             item.value = '';
           })
 
-        },
+        }
   
     };
     
