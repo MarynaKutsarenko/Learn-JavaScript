@@ -195,6 +195,7 @@ document.addEventListener('DOMContentLoaded', function(){
           }
         },
         blockInputs: function(){
+          inputsData = document.querySelector('.data').querySelectorAll('input[type=text]');
           for (let item of inputsData){
             if (resetButton) {
               item.setAttribute('disabled', 'disabled');
@@ -208,13 +209,14 @@ document.addEventListener('DOMContentLoaded', function(){
           buttonCalculate.style.display = 'block';
           cancel.style.display = 'none';
           inputRange.value = 0;
+          periodAmount.value = 0;
 
-          for (let i = 1; i < incomeItems.length; i++) {
-            incomeItems[i].remove();
+          for (let  i = incomeItems.length - 1; i > 0; i--) {
             incomeItems = document.querySelectorAll('.income-items');
+            incomeItems[i].remove();
             buttonIncomeExpPlus.style.display = 'block';
           }
-          for (let i = 1; i < expensesItems.length; i++) {
+          for (let  i = expensesItems.length - 1; i > 0; i--) {
             expensesItems = document.querySelectorAll('.expenses-items');
             expensesItems[i].remove();
             buttonAddExpPlus.style.display = 'block';
@@ -248,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function(){
     resetButton.style.disply = 'block';
     inputSalaryAmount.addEventListener('change', appData.checkButtonCalculate);
     buttonCalculate.addEventListener('click', appData.start.bind(appData));
-    resetButton.addEventListener('click', appData.blockReset);
+    resetButton.addEventListener('click', appData.blockReset.bind(appData));
     buttonIncomeExpPlus.addEventListener('click', appData.addExpensesBlock);
     buttonAddExpPlus.addEventListener('click', appData.addIncomeBlock);
     inputRange.addEventListener('input', appData.changeRangeValue);
