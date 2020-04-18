@@ -27,7 +27,9 @@ document.addEventListener('DOMContentLoaded', function(){
         incomeItems = document.querySelectorAll('.income-items'),
         periodAmount = document.querySelector('.period-amount') ,
         resetButton = document.querySelector('#cancel'),
-        inputsData = document.querySelector('.data').querySelectorAll('input[type=text]');
+        inputsData = document.querySelector('.data').querySelectorAll('input[type=text]'),
+        inputsAllClear = document.querySelector('.data').querySelectorAll('input[type=text]'),
+        inputsAllClearBoth = document.querySelector('.result').querySelectorAll('input[type=text]');
   
     let isNumber = function(n){
       return !isNaN(parseFloat(n) && isFinite(n));
@@ -50,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function(){
         budgetDay: 0,
         budgetMonth: 0,
         expensesMonth: 0,
+
         start: function(){
 
         this.budget = +inputSalaryAmount.value;
@@ -61,9 +64,10 @@ document.addEventListener('DOMContentLoaded', function(){
         this.getAddIncome();
         this.getBudget ();
         this.blockInputs();
-        
+        // this.blockReset();
+
         this.showResult();
-        buttonCalculate.hidden = true;
+        buttonCalculate.style.display = 'none';
         cancel.style.display = 'block';
         },
         showResult: function(){
@@ -201,9 +205,42 @@ document.addEventListener('DOMContentLoaded', function(){
           }
         },
         blockReset: function(){
+          appData.blockInputs();
           buttonCalculate.style.display = 'block';
-          cancel.hidden = true;
+          cancel.style.display = 'none';
+          inputRange.value = 0;
 
+          for (let i = 1; i < incomeItems.length; i++) {
+            incomeItems[i].remove();
+            incomeItems = document.querySelectorAll('.income-items');
+            buttonIncomeExpPlus.style.display = 'block';
+          }
+          for (let i = 1; i < expensesItems.length; i++) {
+            expensesItems = document.querySelectorAll('.expenses-items');
+            expensesItems[i].remove();
+            buttonAddExpPlus.style.display = 'block';
+          }
+
+          this.budget = 0;
+          this.income = {};       
+          this.addIncome = [];  
+          this.incomeMonth = 0;    
+          this.expenses = {};       
+          this.addExpenses = [];    
+          this.deposit = false;
+          this.percentDeposit = 0;
+          this.moneyDeposit = 0;
+          this.budgetDay = 0;
+          this.budgetMonth = 0;
+          this.expensesMonth = 0;
+
+          inputsAllClear.forEach(function(item){
+            item.value = '';
+          })
+          
+          inputsAllClearBoth.forEach(function(item){
+            item.value = '';
+          })
 
         },
   
@@ -212,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function(){
     resetButton.style.disply = 'block';
     inputSalaryAmount.addEventListener('change', appData.checkButtonCalculate);
     buttonCalculate.addEventListener('click', appData.start.bind(appData));
-    // resetButton.addEventListener('click', appData.blockReset.bind(appData));
+    resetButton.addEventListener('click', appData.blockReset);
     buttonIncomeExpPlus.addEventListener('click', appData.addExpensesBlock);
     buttonAddExpPlus.addEventListener('click', appData.addIncomeBlock);
     inputRange.addEventListener('input', appData.changeRangeValue);
@@ -221,8 +258,3 @@ document.addEventListener('DOMContentLoaded', function(){
   
   
   });
-
-
-//     for (let item of inputsData){
-//       item.setAttribute('disabled', 'disabled');
-//     }
