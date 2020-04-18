@@ -120,6 +120,9 @@ function mult(e,f){
 c = mult(2,3);
 console.log(c);
 
+
+
+
 // inputOne.getAttribute('value');
 // console.log(inputOne.value);
 // elem.setAttribute('value', '!!!');
