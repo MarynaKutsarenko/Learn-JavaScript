@@ -72,41 +72,53 @@ let div = document.querySelector('#qw');
 let button = document.querySelector('#button');
 let elem2 = document.querySelector('#elem2');
 let p = document.querySelectorAll('.wwww');
-let parrent = document.querySelector('#parrent');
+let parrent = document.querySelectorAll('#parrent');
 
 let paragrap1 = document.querySelector('#element1');
 let paragrap2 = document.querySelector('#element2');
 let paragrap3 = document.querySelector('#element3');
 let paragrap5 = document.querySelector('#element5');
 let wer = document.querySelectorAll('div');
-let newInput = document.querySelector('#newInput');
 let value = newInput.getAttribute('value');
 
 image.width = 300;
 
-button.addEventListener('click', funck);
-function funck() {
-  paragrap2.textContent = Number(inputTwo.value) +Number(inputTree.value);
+inputOne.addEventListener('focus', test);
+inputOne.addEventListener('blur', test2);
+function test() {
+  this.textContent = 1;
+}
+function test2() {
+  this.textContent = 2 ;
 }
 
-elem.addEventListener('click', function(){
-  paragrap2.style.display = 'none';
+elem.addEventListener('click', function () {
+  this.value = +this.value + 1;
 })
+button.addEventListener('click', funck);
+elem.addEventListener('click', funck);
+elem2.addEventListener('click', funck);
 
-elem2.addEventListener('click', function(){
-  paragrap1.hidden = true;
-})
+function funck() {
+  console.log(this.value);
+}
 
-button.addEventListener('click', function(){
-  this.hidden = true;
-})
+inputOne.addEventListener('blur', tree);
+inputTwo.addEventListener('blur', tree);
+inputTree.addEventListener('blur', tree);
+function tree (){
+  this.value = Number(this.value)**2;
+}
 
-// for (const item of wer) {
-//   item.addEventListener('click', function funck(){
-//     this.classList.toggle('colored');
-//   })
-//   this.removeEventListener('click', funck);
-// }
+let a = 20;
+const b = 30;
+var c;
+function mult(e,f){
+  var g = 2;
+  return e * f * g ;
+}
+c = mult(2,3);
+console.log(c);
 
 // inputOne.getAttribute('value');
 // console.log(inputOne.value);
