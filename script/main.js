@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function(){
         this.getAddIncome();
         this.getBudget ();
         this.blockInputs();
-        // this.blockReset();
 
         this.showResult();
         buttonCalculate.style.display = 'none';
