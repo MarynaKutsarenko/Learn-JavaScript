@@ -103,22 +103,7 @@ function funck() {
   console.log(this.value);
 }
 
-inputOne.addEventListener('blur', tree);
-inputTwo.addEventListener('blur', tree);
-inputTree.addEventListener('blur', tree);
-function tree (){
-  this.value = Number(this.value)**2;
-}
 
-let a = 20;
-const b = 30;
-var c;
-function mult(e,f){
-  var g = 2;
-  return e * f * g ;
-}
-c = mult(2,3);
-console.log(c);
 
 
 
