@@ -102,9 +102,25 @@ elem2.addEventListener('click', funck);
 function funck() {
   console.log(this.value);
 }
-
-
-
+// let arr = [1,2];
+// let sum = 0;
+// if (arr.length > 3) {
+//   for (let i = 0 ;arr.length > i;i++ ) {
+//   sum +=arr[i];
+// };
+// console.log(sum);
+// } else {
+//   alert('не то');
+// }
+let num = 1235;
+let num2 = 3;
+let str = String(num);
+let last = str[str.length - 1];
+if (last % 3 == 0) {
+  console.log('true');
+}else{
+  console.log('!true' + last % 3);
+}
 
 
 
