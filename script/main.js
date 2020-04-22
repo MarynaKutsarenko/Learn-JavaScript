@@ -112,24 +112,29 @@ function funck() {
 // } else {
 //   alert('не то');
 // }
-let num = 1235;
-let num2 = 3;
-let str = String(num);
-let last = str[str.length - 1];
-if (last % 3 == 0) {
-  console.log('true');
-}else{
-  console.log('!true' + last % 3);
-}
+// let num = 1235;
+// let num2 = 3;
+// let str = String(num);
+// let last = str[str.length - 1];
+// if (last % 3 == 0) {
+//   console.log('true');
+// }else{
+//   console.log('!true' + last % 3);
+// }
+
+
+let arr = [1, 2, 3, 4, 5];
+let mult = 0;
+let sum = 0;
+arr.forEach(function(elem) {
+  mult = elem**2;
+	sum += mult;
+});
+console.log(sum);
 
 
 
-// inputOne.getAttribute('value');
-// console.log(inputOne.value);
-// elem.setAttribute('value', '!!!');
-// button.setAttribute('class', 'valid');
-// button.removeAttribute('class' , 'valid');
-// console.log(button.hasAttribute('value'));
+
 
 // for (let item of p){
 //   item.addEventListener('click', funck);
