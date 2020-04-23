@@ -123,15 +123,16 @@ function funck() {
 // }
 
 
-let arr = [1, 2, 3, 4, 5];
-let mult = 0;
-let sum = 0;
-arr.forEach(function(elem) {
-  mult = elem**2;
-	sum += mult;
-});
-console.log(sum);
-
+let lang = 'ru';
+let dayOfWeeksRu = ["'Понедельник',  'Вторник', 'Среда', 'Четверг',  'Пятница',  'Суббота',  'Воскресенье'" ];
+let dayOfWeeksEng = ["'Monday',  'Tuesday',  'Wednesday',  'Thursday',  'Friday',  'Saturday',  'Sunday'" ];
+if (lang == 'ru') {
+  console.log(dayOfWeeksRu);
+} else if (lang == 'en') {
+  console.log(dayOfWeeksEng);
+} else {
+  console.log('Извините! такой язык мы не поддерживаем');
+}
 
 
 
