@@ -52,12 +52,6 @@
 // console.log(Math.abs(corner(3, 30)));
 
 
-// for (let i = 0; i < 5; ++i){
-//   if (i === 2) {
-//     break;
-//   }
-//   console.log(i);
-// }
 
 let link = document.querySelector('.link ');
 let input = document.querySelector('input');
@@ -102,96 +96,82 @@ elem2.addEventListener('click', funck);
 function funck() {
   console.log(this.value);
 }
-// let arr = [1,2];
-// let sum = 0;
-// if (arr.length > 3) {
-//   for (let i = 0 ;arr.length > i;i++ ) {
-//   sum +=arr[i];
-// };
-// console.log(sum);
-// } else {
-//   alert('не то');
-// }
-// let num = 1235;
-// let num2 = 3;
-// let str = String(num);
-// let last = str[str.length - 1];
-// if (last % 3 == 0) {
-//   console.log('true');
-// }else{
-//   console.log('!true' + last % 3);
-// }
 
+let arr =  [10, 20, 30, 50, 235, 3000, 70];
+arr = arr.toString().split(',');
+console.log(arr);
+let arra =  ['пн', 'вт','ср', 'чт', 'пт', 'сб', 'вс'];
+let day = 'вт';
+for (let i = 0; i < arra.length; i++) {
+  if (arra[i] == 'сб' || arra[i] == 'вс') {
+    document.write(`<p><b>${arra[i]}</b></p>`);
+} else if (arra[i] == day) {
+  document.write(`<p><b>${arra[i]}</b></p>`);
+} else{
+    document.write(`<p>${arra[i]}</p>`);
+  }
+}
+  
+  console.log(arra.reverse());
 
-let lang = 'ru';
-let dayOfWeeksRu = ["'Понедельник',  'Вторник', 'Среда', 'Четверг',  'Пятница',  'Суббота',  'Воскресенье'" ];
-let dayOfWeeksEng = ["'Monday',  'Tuesday',  'Wednesday',  'Thursday',  'Friday',  'Saturday',  'Sunday'" ];
-if (lang == 'ru') {
-  console.log(dayOfWeeksRu);
-} else if (lang == 'en') {
-  console.log(dayOfWeeksEng);
-} else {
-  console.log('Извините! такой язык мы не поддерживаем');
+let v = [ 'a', 'b', 'c', 'd', 'e'];
+for (let i = 0; i <= v.length -1; i++){
+  console.log(v[i]);
+}
+let q = [10, 20, 30, 50, 235, 3000];
+q= q.toString().split(',');
+let res = 0;
+for (let i = 0; i < q.length; i++) {
+  if (q[i].startsWith('1') || q[i].startsWith('3') || q[i].startsWith('5')) {
+    console.log(q[i]);
+  }
+}
+console.log(q.reverse());
+let w = [1, 2, 3, 4, 5];
+let r = 0;
+for (const item of w) {
+r = r + item;
+  console.log(r)
 }
 
+let obj = {a: 1, b: 12, c: 3, d: 4, e: 13};
+let sm =0;
+for (const key in obj) {
+  sm += obj[key];
+}
+console.log(sm);
 
-
-
-// for (let item of p){
-//   item.addEventListener('click', funck);
-// }
-// function funck() {
-//   this.textContent = this.textContent + '!';
-//   this.removeEventListener('click', funck);
-// }
-
-// for (let item of p){
-//   item.addEventListener('click', function qqq(){
-//     console.log(this.textContent);
-//     this.removeEventListener('click', qqq);
-//   })
-// }
-
-// elem.addEventListener('click', sum);
-
-// function sum() {
-//   for (let i = 1; i < 10 ; i++){
-//     this.value = Number(this.value)+ 1;
-//   }
-//   this.removeEventListener('click', sum);
-// }
-
-// link.addEventListener('click', test3);
-
-// function test3() {
-//   this.textContent = this.textContent + '(' + link.href + ')';
-//   this.removeEventListener('click', test3);
-// }
-
-// inputOne.addEventListener('blur', test);
-// inputTwo.addEventListener('blur', test);
-// inputTree.addEventListener('blur', test);
-// inputFore.addEventListener('blur', test);
-
-// function test() {
-//   this.value = Number(this.value);
-//   this.removeEventListener('blur', test);
-// }
-
-
-// button.addEventListener('click', function(){
-//   paragrap1.textContent = Number(inputOne.value) + Number(inputTwo.value) + Number(inputTree.value);
-// })
-
-
-// for (let item of p){
-//   item.addEventListener('click', function () {
-//     console.log(this.textContent);
-//   })
-// }
-
-// for (let div of wer){
-//   div.addEventListener('click', function(){
-//     this.textContent++;
-//   })
-// }
+for (let i = 0, j = 0; i < arra.length; i++, j += 2) {
+  console.log(i,j);
+  
+}
+let mmm = 31;
+let result;
+let flag = true;
+for (let i = 0; i < mmm; i++) {
+  if (mmm % i == 0) {
+    flag = false;
+    break;
+  }
+  
+}
+console.log(flag);
+let jer = 500;
+for (let i = 0; i < jer; i++) {
+  if (jer > 10) {
+    jer = jer / 2;
+  };
+  console.log(jer, i);
+}
+let df = '';
+for (let i = 1; i < 10; i++) {
+ 
+  df += i;
+}
+console.log(df.toString().split(''));
+let qa = [1,2,3,4,5];
+for (let i = 0; i < qa.length; i++) {
+  qa[i]+=10;
+  
+}
+console.log(qa)
