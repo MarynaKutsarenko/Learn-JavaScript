@@ -41,11 +41,11 @@ document.addEventListener('DOMContentLoaded', function(){
     
       let appData = {
           budget: 0,
-          income: {},       //доп доходы сумма
-          addIncome: [],  // перечисляем доп доходы
+          income: {},       
+          addIncome: [],  
           incomeMonth: 0,    
-          expenses: {},       //доп расходы
-          addExpenses: [],    // возможные расходы
+          expenses: {},      
+          addExpenses: [],    
           deposit: false,
           percentDeposit: 0,
           moneyDeposit: 0,
