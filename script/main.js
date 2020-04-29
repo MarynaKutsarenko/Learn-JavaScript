@@ -22,7 +22,7 @@ DomElement.prototype.buildElements = function(){
     element= document.createElement('p');
     element.textContent = 'Текст p';
   }
-  element.style.cssText = `height: ${this.height}; width: ${this.width}; bg: ${this.bg}; font-size: ${this.fontSize}`;
+  element.style.cssText = `height: ${this.height}; width: ${this.width}; background-color: ${this.bg} ; font-size: ${this.fontSize}`;
 
   document.body.append(element);
   document.body.style.backgroundColor = '#E0FFFF';
