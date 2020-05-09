@@ -290,67 +290,81 @@ function funck() {
 // let array = [[1, 2, 3], [1, 2, 3], [1, 2, 3]];
 // let arr = [];
 
-class CarWash {
+// class CarWash {
 
-   constructor(brand, model = CarWash.noCarBaseModel(), services = []){
-     this.brand = brand;
-     this.model = model;
-     this.washed = false;
-     this._services = services;
-   }
+//    constructor(brand, model = CarWash.noCarBaseModel(), services = []){
+//      this.brand = brand;
+//      this.model = model;
+//      this.washed = false;
+//      this._services = services;
+//    }
 
-   static noCarBaseModel(){
-     return 'none';
-   }
+//    static noCarBaseModel(){
+//      return 'none';
+//    }
 
-   washReady(){
-    this.washed = true;
-    CarWash.counter++;
-    this.report();
-   }
+//    washReady(){
+//     this.washed = true;
+//     CarWash.counter++;
+//     this.report();
+//    }
 
-   report(){
-    console.log(this.brand, this.model, this.washed);
-   }
+//    report(){
+//     console.log(this.brand, this.model, this.washed);
+//    }
 
-   get services(){
-     console.log(this._services);
-     return this._services.length > 0 ? 'Есть доп услуги' : 'Нет доп услуг';
-   }
+//    get services(){
+//      console.log(this._services);
+//      return this._services.length > 0 ? 'Есть доп услуги' : 'Нет доп услуг';
+//    }
 
-   set services(addServices){
-     return this._services.push(addServices);
-   }
-}
+//    set services(addServices){
+//      return this._services.push(addServices);
+//    }
+// }
 
-class PassCar extends CarWash{
-  constructor(brand, model, services, pass = 5){
-    super(brand, model, services)
-      this.pass = pass;
-  }
+// class PassCar extends CarWash{
+//   constructor(brand, model, services, pass = 5){
+//     super(brand, model, services)
+//       this.pass = pass;
+//   }
 
-  washReady(){
-    super.washReady();
-    this.repotrOffice();
-   }
+//   washReady(){
+//     super.washReady();
+//     this.repotrOffice();
+//    }
 
-  repotrOffice(){
-    console.log('На мойке для легковых , помыта машина');
-  }
-}
+//   repotrOffice(){
+//     console.log('На мойке для легковых , помыта машина');
+//   }
+// }
 
-CarWash.counter = 0;
+// CarWash.counter = 0;
 
- const car1 = new CarWash('mazda', 3, ['black tieres' , 'wax']);
- const car2 = new CarWash('BMW', 'x6'); 
- const car3 = new PassCar('Audi', 3);
- const car4 = new CarWash('ZAZ');
+//  const car1 = new CarWash('mazda', 3, ['black tieres' , 'wax']);
+//  const car2 = new CarWash('BMW', 'x6'); 
+//  const car3 = new PassCar('Audi', 3);
+//  const car4 = new CarWash('ZAZ');
 
 
- car4.services = 'протирка стекол';
+//  car4.services = 'протирка стекол';
 
-car3.washReady();
-car1.washReady();
+// car3.washReady();
+// car1.washReady();
 
- console.log(car1);
- console.log(car3);
+//  console.log(car1);
+//  console.log(car3);
+
+// function func(num){
+//   let i = 1;
+//   while (true) {
+//   num =  num / 2;
+
+//     if (num < 10) {
+//       return i;
+//     }
+//     i++;
+//   }
+// }
+
+
