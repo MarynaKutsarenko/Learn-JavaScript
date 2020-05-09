@@ -367,4 +367,18 @@ function funck() {
 //   }
 // }
 
+function func() {
+  let sum = 0;
+  let i =1;
+  while (true) {
+    sum += i;
 
+    if (sum >= 100) {
+      return i;
+    }
+    i++;
+  }
+
+
+}
+console.log(func());
