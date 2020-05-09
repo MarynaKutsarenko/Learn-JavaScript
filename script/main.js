@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function(){
       inputAddIncome.forEach(function(item){
       let itemValue = item.value.trim();
           if (itemValue !== '') {
-            __this.addIncome.push(itemValue);
+            this.addIncome.push(itemValue);
           }
       });
     };

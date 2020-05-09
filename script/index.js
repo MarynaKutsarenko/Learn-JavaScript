@@ -33,28 +33,24 @@ document.addEventListener('DOMContentLoaded', function(){
 
   class AppData {
 
-    constructor() {
-      this.budget = 0;
-      this.income = {};       
-      this.addIncome = [];  
-      this.incomeMonth = 0;    
-      this.expenses = {};      
-      this.addExpenses = [];    
-      this.deposit = false;
-      this.percentDeposit = 0;
-      this.moneyDeposit = 0;
-      this.budgetDay = 0;
-      this.budgetMonth = 0;
-      this.expensesMonth = 0;
+    constructor(budget = 0, income = {}, addIncome = [], incomeMonth = 0, expenses = {}, addExpenses = [], deposit = false,percentDeposit = 0, moneyDeposit = 0, budgetDay = 0, budgetMonth = 0, expensesMonth = 0) {
+
+      this.budget = budget;
+      this.income = income;       
+      this.addIncome = addIncome;  
+      this.incomeMonth = incomeMonth;    
+      this.expenses = expenses;      
+      this.addExpenses = addExpenses;    
+      this.deposit = deposit;
+      this.percentDeposit = percentDeposit;
+      this.moneyDeposit = moneyDeposit;
+      this.budgetDay = budgetDay;
+      this.budgetMonth = budgetMonth;
+      this.expensesMonth = expensesMonth;
+
     }
 
-    isNumber(n){
-      return !isNaN(parseFloat(n) && isFinite(n));
-    }
 
-    checkString(line){
-      return isNaN(parseFloat(line)) && line !== '';
-    }
 
     start(){
 
@@ -85,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function(){
       inputIncomePeriod.value = this.calcSavedMoney();
 
       inputRange.addEventListener('input', function(){
-        inputIncomePeriod.value = __this.calcSavedMoney();
+        inputIncomePeriod.value = this.calcSavedMoney();
       });
     }
 
@@ -111,22 +107,23 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     getExpenses(){
-
+      const __this = this;
       expensesItems.forEach(function(item){
       let itemExpenses = item.querySelector('.expenses-title').value;
       let cashExpenses = item.querySelector('.expenses-amount').value;
           if (itemExpenses !== '' && cashExpenses);
-            this.expenses[itemExpenses] = cashExpenses;
+          __this.expenses[itemExpenses] = cashExpenses;
       });
     }
 
     getIncome(){
-    
+      const __this = this;
+
       incomeItems.forEach(function(item){
       let itemIncome = item.querySelector('.income-title').value;
       let cashIncome = item.querySelector('.income-amount').value;
           if (itemIncome !== '' && cashIncome) {
-            this.income[itemIncome] = cashIncome;
+            __this.income[itemIncome] = cashIncome;
           }
       });
 
@@ -141,17 +138,18 @@ document.addEventListener('DOMContentLoaded', function(){
             addExpenses.forEach(function(item){
              item = item.trim();
               if (item !== '') {
-                this.addExpenses.push(item);
+                addExpenses.push(item);
               }
             });
     }
 
     getAddIncome(){
+      const __this = this;
 
       inputAddIncome.forEach(function(item){
       let itemValue = item.value.trim();
           if (itemValue !== '') {
-            this.addIncome.push(itemValue);
+            __this.addIncome.push(itemValue);
           }
       });
     }
@@ -162,6 +160,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     getExpensesMonth(){
+      const __this = this;
 
       for (let key in this.expenses) {
         this.expensesMonth += +this.expenses[key];
@@ -225,8 +224,9 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     blockReset(){
-  
-      blockInputs();
+      const __this = this;
+      
+        __this.blockInputs();
 
       buttonCalculate.style.display = 'block';
       cancel.style.display = 'none';
@@ -285,8 +285,17 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   }
 
+  const isNumber = function(n){
+    return !isNaN(parseFloat(n) && isFinite(n));
+  };
+
+  // checkString(line){
+  //   return isNaN(parseFloat(line)) && line !== '';
+  // };
+
   const newData = new AppData();
 
-  console.log(newData);
+  // newData.start();
+  newData.eventListeners();
 
 });
