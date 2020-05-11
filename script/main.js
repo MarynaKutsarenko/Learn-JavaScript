@@ -366,19 +366,73 @@ function funck() {
 //     i++;
 //   }
 // }
+// let arr = [12, 19, 28, 13, 14, 345];
+// let newArr = [];
 
-function func() {
-  let sum = 0;
-  let i =1;
-  while (true) {
-    sum += i;
+// for (let i = 0; i < 10; i++) {
+//   if (inRage(arr[i])) {
+//     newArr.push(arr[i]); 
+//   }
+  
+// }
 
-    if (sum >= 100) {
-      return i;
-    }
-    i++;
-  }
+// function inRage(num) {
+//   let sum = getSumArr(getDigit(num));
+
+//   if (sum >=1 && sum <=9) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// function getDigit(num) {
+//   return String(num).split('');
+// }
+
+// function getSumArr(arr) {
+//   let sum = 0;
+
+//   for (let i = 0; i < arr.length; i++) {
+//     sum += Number(arr[i]);  
+//   }
+//   return sum;
+// }
 
 
-}
-console.log(func());
+
+// console.log(newArr);
+// function getDigitSum(num) {
+//   return String(num).split('');
+// }
+// function getSum(arr) {
+//   let sum = 0;
+
+//   for (const item of arr) {
+//    sum += +item
+//   }
+//   return sum;
+// }
+// console.log(getSum(getDigitSum(34)));
+
+// function devers(str) {
+//   return str.split('').reverse().join('');
+// }
+// console.log(devers('Mary_Kutsarenko'));
+// let arr = [4,5,3,9, 78, 4, 4 ,6];
+// function isNegative(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+    
+//     if (arr[i] === arr[i - 1]) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+// console.log(isNegative(arr));
+
+
+
+
+
+
