@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function(){
       buttonCalculate.style.display = 'block';
       cancel.style.display = 'none';
       inputRange.value = 0;
-      periodAmount.value = 0;
+      periodAmount.textContent = 0;
 
       let inputsData = document.querySelector('.data').querySelectorAll('input[type=text]');
         for (let item of inputsData){
