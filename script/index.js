@@ -50,8 +50,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
     }
 
-
-
     start(){
 
       this.budget = +inputSalaryAmount.value;
@@ -72,6 +70,8 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     showResult(){
+      const __this = this;
+
       inputBudgetMonth.value = this.budgetMonth;
       inputBudgetDay.value = Math.floor(this.budgetDay);
       inputExpensesMonth.value = this.expensesMonth;
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function(){
       inputIncomePeriod.value = this.calcSavedMoney();
 
       inputRange.addEventListener('input', function(){
-        inputIncomePeriod.value = this.calcSavedMoney();
+        inputIncomePeriod.value = __this.calcSavedMoney();
       });
     }
 
@@ -224,8 +224,9 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     blockReset(){
+
       const __this = this;
-      
+
         __this.blockInputs();
 
       buttonCalculate.style.display = 'block';
@@ -295,7 +296,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
   const newData = new AppData();
 
-  // newData.start();
   newData.eventListeners();
 
 });
