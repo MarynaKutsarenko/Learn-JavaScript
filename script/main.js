@@ -1,10 +1,9 @@
-let money;
-let income;
-let addExpenses;
-let deposit;
-let mission,
-    period;
-
-alert ('Learn JavaScript !');
-
-console.log('I am glad to be here');  
+function isPrime(num) {
+	for (let i = 2; i < num; i++) {
+		if (num % i == 0) {
+			return false;
+		}
+	}
+	
+	return true;
+}
