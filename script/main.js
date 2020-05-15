@@ -431,8 +431,13 @@ function funck() {
 // }
 // console.log(isNegative(arr));
 
-
-
-
-
-
+function isPrime(num) {
+	for (let i = 2; i < 100; i++) {
+		if (num % i == 0) {
+			return false;
+		}
+	}
+	
+	return true;
+}
+console.log(isPrime(1,100))
