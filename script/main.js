@@ -51,51 +51,11 @@
 // }
 // console.log(Math.abs(corner(3, 30)));
 
-
-
-let link = document.querySelector('.link ');
-let input = document.querySelector('input');
-let elem = document.querySelector('#elem');
 let image = document.querySelector('img');
-let inputOne = document.querySelector('#input');
-let inputTwo = document.querySelector('#input2');
-let inputTree = document.querySelector('#input3');
-let inputFore = document.querySelector('#input4');
-let inputFiwe = document.querySelector('#input4');
-let div = document.querySelector('#qw');
-let button = document.querySelector('#button');
-let elem2 = document.querySelector('#elem2');
-let p = document.querySelectorAll('.wwww');
-let parrent = document.querySelectorAll('#parrent');
-
-let paragrap1 = document.querySelector('#element1');
-let paragrap2 = document.querySelector('#element2');
-let paragrap3 = document.querySelector('#element3');
-let paragrap5 = document.querySelector('#element5');
-let wer = document.querySelectorAll('div');
-let value = newInput.getAttribute('value');
 
 image.width = 300;
 
-inputOne.addEventListener('focus', test);
-inputOne.addEventListener('blur', test2);
-function test() {
-  this.textContent = 1;
-}
-function test2() {
-  this.textContent = 2 ;
-}
 
-elem.addEventListener('click', function () {
-  this.value = +this.value + 1;
-})
-button.addEventListener('click', funck);
-elem.addEventListener('click', funck);
-elem2.addEventListener('click', funck);
-
-function funck() {
-  console.log(this.value);
-}
 
 // let arr =  [10, 20, 30, 50, 235, 3000, 70];
 // arr = arr.toString().split(',');
@@ -290,71 +250,6 @@ function funck() {
 // let array = [[1, 2, 3], [1, 2, 3], [1, 2, 3]];
 // let arr = [];
 
-// class CarWash {
-
-//    constructor(brand, model = CarWash.noCarBaseModel(), services = []){
-//      this.brand = brand;
-//      this.model = model;
-//      this.washed = false;
-//      this._services = services;
-//    }
-
-//    static noCarBaseModel(){
-//      return 'none';
-//    }
-
-//    washReady(){
-//     this.washed = true;
-//     CarWash.counter++;
-//     this.report();
-//    }
-
-//    report(){
-//     console.log(this.brand, this.model, this.washed);
-//    }
-
-//    get services(){
-//      console.log(this._services);
-//      return this._services.length > 0 ? 'Есть доп услуги' : 'Нет доп услуг';
-//    }
-
-//    set services(addServices){
-//      return this._services.push(addServices);
-//    }
-// }
-
-// class PassCar extends CarWash{
-//   constructor(brand, model, services, pass = 5){
-//     super(brand, model, services)
-//       this.pass = pass;
-//   }
-
-//   washReady(){
-//     super.washReady();
-//     this.repotrOffice();
-//    }
-
-//   repotrOffice(){
-//     console.log('На мойке для легковых , помыта машина');
-//   }
-// }
-
-// CarWash.counter = 0;
-
-//  const car1 = new CarWash('mazda', 3, ['black tieres' , 'wax']);
-//  const car2 = new CarWash('BMW', 'x6'); 
-//  const car3 = new PassCar('Audi', 3);
-//  const car4 = new CarWash('ZAZ');
-
-
-//  car4.services = 'протирка стекол';
-
-// car3.washReady();
-// car1.washReady();
-
-//  console.log(car1);
-//  console.log(car3);
-
 // function func(num){
 //   let i = 1;
 //   while (true) {
@@ -399,8 +294,6 @@ function funck() {
 //   return sum;
 // }
 
-
-
 // console.log(newArr);
 // function getDigitSum(num) {
 //   return String(num).split('');
@@ -431,13 +324,53 @@ function funck() {
 // }
 // console.log(isNegative(arr));
 
-function isPrime(num) {
-	for (let i = 2; i < 100; i++) {
-		if (num % i == 0) {
-			return false;
-		}
-	}
+// function isPrime(num) {
+// 	for (let i = 2; i < 100; i++) {
+// 		if (num % i == 0) {
+// 			return false;
+// 		}
+// 	}
 	
-	return true;
+// 	return true;
+// }
+// console.log(isPrime(1,100))
+
+// const names = ['vladimir', 'Mark', 'mary', 'kate'];
+
+// names.forEach(function(item, i, arr){
+//   arr[i] = item[0].toUpperCase() + item.slice(1).toLowerCase();
+// })
+
+// for (let i = 0; i < names.length; i++) {
+//   names[i] = names[i][0].toUpperCase() + names[i].slice(1).toLowerCase();
+  
+// }
+
+// const correctName = names.map((item) => item[0].toUpperCase() + item.slice(1).toLowerCase());
+const mix = ['Mary', '32', '15', 'GloAcademy', 'dev-js', '89'];
+const onlyString = mix.filter((item) => typeof item === 'string' && isNaN(item));
+// for (let i = 0; i < mix.length; i++) {
+//   if (typeof mix[i] === 'string' && isNaN(mix[i])) {
+//     onlyString.push(mix[i]);
+//   }
+// }
+const numbers = [12,23, 45,-34];
+const posNum = numbers.filter((item) => item < 0);
+console.log(posNum);
+console.log(onlyString);
+let sum = 0;
+for (let i = 0; i < numbers.length; i++) {
+  
+  sum += numbers[i];
 }
-console.log(isPrime(1,100))
+console.log(sum);
+
+let sum2 = [[1,2], [3,4], [5,6]];
+
+const newSum = sum2.reduce((acc, item) => acc.concat(item), []);
+let sum3 = newSum.reduce((acc, item) => acc + item);
+console.log(sum3)
+console.log(newSum)
+
+
+
