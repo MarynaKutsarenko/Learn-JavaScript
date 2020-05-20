@@ -207,22 +207,6 @@ document.addEventListener('DOMContentLoaded', function(){
 			}
 			
     }
-    
-    getInfoDeposit(){
-
-      if (this.deposit){
-				this.percentDeposit = depositPercent.value;
-				this.moneyDeposit = depositAmount.value;
-           while(!isNumber(this.percentDeposit)){
-             this.percentDeposit = ('Ошибка! Какой у Вас годовой процент?');
-           }
-        
-           while(!isNumber(this.moneyDeposit)){
-             this.moneyDeposit = ('Ошибка! Какой у Вас годовой процент?');
-           }
-			 }
-			 
-    }
 
     calcSavedMoney(){
 
@@ -257,7 +241,17 @@ document.addEventListener('DOMContentLoaded', function(){
         }
 			}
 			
-		}
+    }
+        
+    getInfoDeposit(){
+
+      if (this.deposit){
+				this.percentDeposit = depositPercent.value;
+        this.moneyDeposit = depositAmount.value;
+        showErrMass(percentDeposit);
+      }
+			 
+    }
 
 		changePercent(){
 
@@ -265,18 +259,12 @@ document.addEventListener('DOMContentLoaded', function(){
 
 				if (valueSelect === 'other') {
           depositPercent.style.display = 'inline-block';
-          const depValPercent = depositPercent.value;
-
-          if (depValPercent === '' || !isNumber(depValPercent) || depValPercent < 0 || depValPercent >100) {
-            buttonCalculate.setAttribute('disabled', 'true');
-            showErrMass.call();
-          }
-
+          valueSelect.addEventListener('change', this.getInfoDeposit);
 				} else {
           depositPercent.value = valueSelect;
           depositPercent.style.display = 'none';
           depositPercent.value = '';
-          buttonCalculate.removeAttribute('disabled');
+          valueSelect.removeEventListener('change', this.getInfoDeposit);
         }
         
 		}
@@ -380,8 +368,12 @@ document.addEventListener('DOMContentLoaded', function(){
   //   return isNaN(parseFloat(line)) && line !== '';
   // };
 
-  const showErrMass = function (dataParcent) {
-    return alert('Введите процент в диапазоне от 0 до 100!');
+  const showErrMass = function (percentDeposit) {
+
+    if (percentDeposit === '' || !isNumber(percentDeposit) || percentDeposit < 0 || percentDeposit >100) {
+     alert('Введите процент в диапазоне от 0 до 100!');
+    }
+    
   };
 
   const newData = new AppData();
