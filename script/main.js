@@ -68,7 +68,19 @@ document.addEventListener('DOMContentLoaded', function(){
       this.showResult();
 
       buttonCalculate.style.display = 'none';
-			cancel.style.display = 'block';
+      cancel.style.display = 'block';
+      
+      if (isNaN(depositPercent.value) || depositPercent.value.trim() === '' || depositPercent.value > 100 || depositPercent.value <= 0) {
+        this.changePercent.readOnly = true;
+        alert('Значение в поле процент должно быть в диапазоне от 0 до 100');
+        return;
+      } 
+    
+      if (isNaN(depositAmount.value) || depositAmount.value.trim() === '') {
+        this.changePercent.readOnly = true;
+        alert('Значение в поле процент должно быть в диапазоне от 0 до 100');
+        return;
+      }
 			
     }
 
@@ -248,7 +260,6 @@ document.addEventListener('DOMContentLoaded', function(){
       if (this.deposit){
 				this.percentDeposit = depositPercent.value;
         this.moneyDeposit = depositAmount.value;
-        showErrMass(percentDeposit);
       }
 			 
     }
@@ -259,12 +270,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
 				if (valueSelect === 'other') {
           depositPercent.style.display = 'inline-block';
-          valueSelect.addEventListener('change', this.getInfoDeposit);
 				} else {
           depositPercent.value = valueSelect;
           depositPercent.style.display = 'none';
-          depositPercent.value = '';
-          valueSelect.removeEventListener('change', this.getInfoDeposit);
         }
         
 		}
@@ -282,11 +290,13 @@ document.addEventListener('DOMContentLoaded', function(){
         depositPercent.style.display = 'none';
 				depositBank.value = '';
         depositAmount.value = '';
+        depositPercent.value = '';
 				this.deposit = false;
 				depositBank.removeEventListener('change', this.changePercent);
-			}
+      }
+      
 
-		}
+    }
 
     blockReset(){
 
@@ -358,6 +368,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			
 			checkDeposit.addEventListener('change', this.depositHandler.bind(this));
     }
+
   }
 
   const isNumber = function(n){
@@ -367,14 +378,6 @@ document.addEventListener('DOMContentLoaded', function(){
   // checkString(line){
   //   return isNaN(parseFloat(line)) && line !== '';
   // };
-
-  const showErrMass = function (percentDeposit) {
-
-    if (percentDeposit === '' || !isNumber(percentDeposit) || percentDeposit < 0 || percentDeposit >100) {
-     alert('Введите процент в диапазоне от 0 до 100!');
-    }
-    
-  };
 
   const newData = new AppData();
 
