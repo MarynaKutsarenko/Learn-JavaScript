@@ -347,30 +347,40 @@ image.width = 300;
 // }
 
 // const correctName = names.map((item) => item[0].toUpperCase() + item.slice(1).toLowerCase());
-const mix = ['Mary', '32', '15', 'GloAcademy', 'dev-js', '89'];
-const onlyString = mix.filter((item) => typeof item === 'string' && isNaN(item));
-// for (let i = 0; i < mix.length; i++) {
-//   if (typeof mix[i] === 'string' && isNaN(mix[i])) {
-//     onlyString.push(mix[i]);
-//   }
-// }
-const numbers = [12,23, 45,-34];
-const posNum = numbers.filter((item) => item < 0);
-console.log(posNum);
-console.log(onlyString);
-let sum = 0;
-for (let i = 0; i < numbers.length; i++) {
-  
-  sum += numbers[i];
+
+let firstInput = document.querySelector('.first');
+let secondInput = document.querySelector('.second');
+let sowResultInput = document.querySelector('.show');
+let getSumBtn = document.querySelector('.getSum');
+let getmultBtn = document.querySelector('.getMult');
+let paragrapth = document.querySelector('.text');
+let paragrapth2 = document.querySelector('.text2');
+let paragrapth3 = document.querySelector('.text3');
+let paragrapth4 = document.querySelector('.text4');
+let paragrapth5 = document.querySelector('.text5');
+
+let link = document.querySelector('.link');
+
+
+getSumBtn.addEventListener('click', getPlus);
+getmultBtn.addEventListener('click', getPlus);
+function getPlus() {
+  console.log(this.textContent);
 }
-console.log(sum);
+paragrapth5.addEventListener('click', concat);
+paragrapth4.addEventListener('click', concat);
+paragrapth3.addEventListener('click', concat);
+paragrapth2.addEventListener('click', concat);
+paragrapth.addEventListener('click', concat);
 
-let sum2 = [[1,2], [3,4], [5,6]];
+function concat() {
+  this.textContent += '!';
+}
+firstInput.addEventListener('blur', mult);
+secondInput.addEventListener('blur', mult);
 
-const newSum = sum2.reduce((acc, item) => acc.concat(item), []);
-let sum3 = newSum.reduce((acc, item) => acc + item);
-console.log(sum3)
-console.log(newSum)
-
+function mult() {
+  this.value = Number(this.value)**2;
+}
 
 
