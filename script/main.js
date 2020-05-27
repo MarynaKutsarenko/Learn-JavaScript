@@ -1,8 +1,6 @@
 window.addEventListener('DOMContentLoaded', function(){
   'use strict';
 
-  let date = new Date();
-
   const weekArray = ['Понедельник', 'Вторник','Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']; 
   
   let todaysDay = document.createElement('div');
@@ -11,11 +9,12 @@ window.addEventListener('DOMContentLoaded', function(){
   let getDay = document.createElement('div');
 
   function getInfo() {
+    let date = new Date();
     
     let hours = addZero(date.getHours()),
         minutes = addZero(date.getMinutes()),
         seconds = addZero(date.getSeconds()),
-        day = date.getDay(),
+        day = date.getDay() -1,
 
         dateStop = new Date('31 december 2020').getTime(),
         dateNow = new Date().getTime(),
@@ -26,29 +25,26 @@ window.addEventListener('DOMContentLoaded', function(){
 
     function buildInfo() {
       getDaysPart.innerHTML = checkPartOfDay(time);
-      document.body.append(getDaysPart);
-      todaysDay.innerHTML = ('Сегодня :' + ' ' + ' ' + day);
-      document.body.append(todaysDay);
+      todaysDay.innerHTML = ('Сегодня :' + ' ' + day);
       time.innerHTML = ('Текущее время :'+ ' ' + hours + ':' + minutes + ':' + seconds);
-      document.body.append(time);
       getDay.innerHTML = ('До нового года осталось:'+ ' ' + days);
-      document.body.append(getDay);
+      
     }
 
     buildInfo();
   }
-  
-  setInterval(getInfo(),  1000);
+  getInfo();
+  setInterval(getInfo,  1000);
 
   function checkPartOfDay(time) {
     if (time >= 0 && time <= 6) {
-      return ('Доброй ночи');
+      return ('Доброй ночи!');
     } else if (time > 6 && time <= 12){
-      return 'Доброе утро';
+      return ('Доброе утро!');
     } else if (time > 12 && time <= 18){
-     return ( 'Доброй день');
+     return ( 'Доброй день!');
     } else {
-      return (' Добрый вечер');
+      return (' Добрый вечер!');
     }
 
   }
@@ -61,6 +57,10 @@ window.addEventListener('DOMContentLoaded', function(){
       }
     }
 
+    document.body.append(getDaysPart);
+    document.body.append(todaysDay);
+    document.body.append(time);
+    document.body.append(getDay);
     document.body.style.backgroundColor = 'yellowGreen';
     
 });
