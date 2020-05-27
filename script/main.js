@@ -37,9 +37,8 @@ window.addEventListener('DOMContentLoaded', function(){
 
             clearInterval(timerId);
 
-          } else {
-            return;
-          }
+          } else { return; }
+          
     }, 1000);
 
 
@@ -52,6 +51,6 @@ window.addEventListener('DOMContentLoaded', function(){
     }
   }
 
-  countTimerDown('27 may 2020 10:53:00 ');
+  countTimerDown('27 may 2020 22:53:00 ');
 
 });
