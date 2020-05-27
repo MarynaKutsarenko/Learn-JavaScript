@@ -8,6 +8,7 @@ window.addEventListener('DOMContentLoaded', function(){
         timerSeconds = document.querySelector('#timer-seconds');
 
     let timerId;
+    
 
     function getTimerRemaining() {
 
@@ -18,22 +19,28 @@ window.addEventListener('DOMContentLoaded', function(){
           minutes = addZero(Math.floor(timeRemaining / 60) % 60),
           hours = addZero(Math.floor(timeRemaining / 60 / 60));
 
-      return{timeRemaining, hours, minutes, seconds};
-
+      return{timeRemaining, hours, minutes, seconds, dateStop, dateNow};
     }
 
-      timerId = setInterval(function () {
-
-        let timer = getTimerRemaining();
+    timerId = setInterval(function () {
+      let timer = getTimerRemaining();
+      
           timerHours.textContent = timer.hours;
           timerMinutes.textContent = timer.minutes;
           timerSeconds.textContent = timer.seconds;
 
-         if (timer.timeRemaining == 0) {
+          if (timer.timeRemaining <= 0) {
+
+            timerHours.textContent = '00';
+            timerMinutes.textContent = '00';
+            timerSeconds.textContent = '00';
+
             clearInterval(timerId);
+
+          } else {
+            return;
           }
-   
-      }, 1000);
+    }, 1000);
 
 
     function addZero(num) {
@@ -45,6 +52,6 @@ window.addEventListener('DOMContentLoaded', function(){
     }
   }
 
-  countTimerDown('26 may 2020 19:45:12');
+  countTimerDown('27 may 2020 10:53:00 ');
 
 });
