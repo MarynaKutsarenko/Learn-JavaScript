@@ -375,46 +375,4 @@ let link = document.querySelector('.link');
 //   setInterval(() => console.log(this.value), 1000)
 // });
 
-firstInput.addEventListener('click', function () {
-  setInterval(funck, 1000, this);
-})
-let timerId;
 
-function funck(self) {
-  console.log(self.value);
-}
-start.addEventListener('click', function d() {
-  timerId =  setInterval(func,1000, this);
-  start.removeEventListener('click', d);
-});
-function func(self){
-  console.log(self.value--);
-
-    if (self.value == -5) {
-      clearInterval(timerId);
-    }
-}
-stop.addEventListener('click', function q() {
-  let timerId = setInterval(function(self){
-    console.log(Number(self.value--));
-
-      if(self.value == 0){
-        clearInterval(timerId);
-      }
-  }, 1000, this);
-  stop.removeEventListener('click' , q);
-})
-
-let date = new Date ();
-const addZero = function(num){
-  if (num >= 0 && num <= 9) {
-    return '0' + num;
-  } else {
-    return num;
-  }
-};
-console.log(date.getFullYear() + ':' + addZero(date.getMonth() + 1) + ':' + (date.getDay()));
-
-let str = '2025-12-31';
-str = str.split('-').reverse().join('/');
-console.log(str)
