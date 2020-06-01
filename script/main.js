@@ -78,17 +78,26 @@ window.addEventListener('DOMContentLoaded', function(){
 
   const togglePopup = (() => {
 
-      const popup = document.querySelector('.popup'),
+      const popup = document.querySelector('.popup '),
           popupBtn = document.querySelectorAll('.popup-btn'),
           popupClose = document.querySelector('.popup-close');
 
       popupBtn.forEach((element) => {
-        element.addEventListener('click', () => {
-          popup.style.transform = 50 + 'px';
-          popup.style.display = 'block';
-
-          });
+        element.addEventListener('click', () => {   
+          popup.style.cssText = `
+            transition: '.5s'; 
+            ease: '5s';
+            display: block`;
+        });
       });
+
+      popupClose.addEventListener('click', function(){
+        popup.style.cssText = ` 
+          transition: '.5'; 
+          ease: '5s';
+          display: none`;
+      });
+
   });
 
   togglePopup();
