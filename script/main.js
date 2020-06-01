@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // let arr = ['пн', 'вт', 'ср', 'чт', 'пн', 'сб', 'вс',];
 // let sum = (accumulator, currentValue) => accumulator + currentValue;
@@ -374,5 +374,4 @@ let link = document.querySelector('.link');
 // firstInput.addEventListener('click', function(){
 //   setInterval(() => console.log(this.value), 1000)
 // });
-
 
