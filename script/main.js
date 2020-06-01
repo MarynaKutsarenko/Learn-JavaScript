@@ -80,23 +80,34 @@ window.addEventListener('DOMContentLoaded', function(){
 
       const popup = document.querySelector('.popup '),
           popupBtn = document.querySelectorAll('.popup-btn'),
-          popupClose = document.querySelector('.popup-close');
+          popupClose = document.querySelector('.popup-close'),
+          popupContent = popup.querySelector('.popup-content');
 
-      popupBtn.forEach((element) => {
-        element.addEventListener('click', () => {   
-          popup.style.cssText = `
-            transition: '.5s'; 
-            ease: '5s';
-            display: block`;
-        });
-      });
-
-      popupClose.addEventListener('click', function(){
-        popup.style.cssText = ` 
-          transition: '.5'; 
-          ease: '5s';
-          display: none`;
-      });
+          let count = 0; 
+          function popupAnimate() { 
+        
+            if (count <= 20) {
+              requestAnimationFrame(popupAnimate); 
+              count++; 
+              popupContent.style.left = (count * 2) + '%'; 
+            } else { 
+              count = 0; 
+              cancelAnimationFrame(popupAnimate); 
+            }
+          }
+        
+          popupBtn.forEach((elem) => { 
+            elem.addEventListener('click', () => {  
+              popup.style.display = 'block'; 
+              if (document.documentElement.clientWidth > 768) { 
+                popupAnimate(); 
+              }
+            });
+          });
+          
+          popupClose.addEventListener('click', () => { 
+            popup.style.display = 'none'; 
+          });
 
   });
 
