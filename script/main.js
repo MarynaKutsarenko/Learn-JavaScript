@@ -79,35 +79,35 @@ window.addEventListener('DOMContentLoaded', function(){
   const togglePopup = (() => {
 
       const popup = document.querySelector('.popup '),
-          popupBtn = document.querySelectorAll('.popup-btn'),
-          popupClose = document.querySelector('.popup-close'),
-          popupContent = popup.querySelector('.popup-content');
+            popupBtn = document.querySelectorAll('.popup-btn'),
+            popupClose = document.querySelector('.popup-close'),
+            popupContent = popup.querySelector('.popup-content');
 
-          let count = 0; 
-          function popupAnimate() { 
+        let count = 0; 
+      function popupAnimate() { 
         
-            if (count <= 20) {
-              requestAnimationFrame(popupAnimate); 
-              count++; 
-              popupContent.style.left = (count * 2) + '%'; 
-            } else { 
-              count = 0; 
-              cancelAnimationFrame(popupAnimate); 
-            }
+        if (count <= 60) {
+          requestAnimationFrame(popupAnimate); 
+          count++; 
+          popupContent.style.left = (count * 2) + '%'; 
+        } else { 
+            count = 0; 
+            cancelAnimationFrame(popupAnimate); 
           }
+      }
         
-          popupBtn.forEach((elem) => { 
-            elem.addEventListener('click', () => {  
-              popup.style.display = 'block'; 
-              if (document.documentElement.clientWidth > 768) { 
-                popupAnimate(); 
-              }
-            });
-          });
+      popupBtn.forEach((elem) => { 
+        elem.addEventListener('click', () => {  
+          popup.style.display = 'block'; 
+            if (document.documentElement.clientWidth > 768) { 
+              popupAnimate(); 
+            }
+        });
+      });
           
-          popupClose.addEventListener('click', () => { 
-            popup.style.display = 'none'; 
-          });
+     popupClose.addEventListener('click', () => { 
+        popup.style.display = 'none'; 
+     });
 
   });
 
