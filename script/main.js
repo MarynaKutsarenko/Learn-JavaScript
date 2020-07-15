@@ -1,19 +1,11 @@
 'use strict';
 
-// let arr = ['пн', 'вт', 'ср', 'чт', 'пн', 'сб', 'вс',];
-// let sum = (accumulator, currentValue) => accumulator + currentValue;
-
-// console.log(arr[0],arr[1],arr[2],arr[3],arr[4],arr[5],arr[6]);
-// console.log(arr.reduce(sum));
-
 // let arr = [1,2,3,4,5];
 // let sum = (accumulator, currentValue) => accumulator + currentValue;
 // console.log(arr.reduce(sum), arr.length);
 
 // let obj = {1: 'пн', 2: 'вт', 3: 'ср', 4: 'чт', 5: 'пт', 6: 'сб', 7: 'вс',};
 // console.log(obj[3]);
-
-
 
 // let arr = [2,4,1,5,3,6];
 // let result = 0; 
@@ -43,10 +35,6 @@
 //   return 30 * time - ( 11 * minute / 2 );
 // }
 // console.log(Math.abs(corner(3, 30)));
-
-let image = document.querySelector('img');
-
-image.width = 300;
 
 // let arra =  ['пн', 'вт','ср', 'чт', 'пт', 'сб', 'вс'];
 // let day = 'чт';
@@ -89,6 +77,10 @@ image.width = 300;
 //     arr2.push(we[key]);
 //   }
 // }
+// result = result.map(function(item){ функция кот преодразует массив строк в массив чисел
+//   let number = parseInt(item);
+//   return isNaN(number)? item : number;
+// });
 // console.log(we, arr2);
 // let arr2 = ['a', 'b', 'c', 'a', 'a', 'b','a', 'b', 'a', 'a', 'b'];
 // let count = {};
@@ -194,12 +186,20 @@ image.width = 300;
 
 // const correctName = names.map((item) => item[0].toUpperCase() + item.slice(1).toLowerCase());
 // console.log(names);
+//let age = 32;
+//age = (eval(age.toString().split('').join('+')));  
 let firstInput = document.querySelector('.first');
 let secondInput = document.querySelector('.second');
 let showResultInput = document.querySelector('.show');
 let start = document.querySelector('.getSum');
 let stop = document.querySelector('.getMult');
 let link = document.querySelector('.link');
+let image = document.querySelector('img');
+
+image.width = 300;
+
+
+
 
 
 
