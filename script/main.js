@@ -198,7 +198,7 @@ let image = document.querySelector('img');
 
 image.width = 300;
 
-
+let dev = 'new';
 let str = 'word1 word2 word3';
 
 let words = str.split(' ');
